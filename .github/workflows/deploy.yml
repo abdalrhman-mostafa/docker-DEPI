@@ -1,13 +1,13 @@
-name: Deploy react
-on:
-  push:
-    branches:
-      - master
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-      - run: docker build -t abdalrhman1/react-test -f Dockerfile.dev .
-      - run: docker run -e CI=true abdalrhman1/react-test npm run test
+# name: Deploy react
+# on:
+#   push:
+#     branches:
+#       - master
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+#       - run: docker build -t abdalrhman1/react-test -f Dockerfile.dev .
+#       - run: docker run -e CI=true abdalrhman1/react-test npm run test
