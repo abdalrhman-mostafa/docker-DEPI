@@ -12,10 +12,10 @@ jobs:
       - run: docker build -t abdalrhman1/react-test -f Dockerfile.dev .
       - run: docker run -e CI=true abdalrhman1/react-test npm run test
 
-      - run: docker build -t abdalrhman1/multi-client -f ./client/dockerfile ./microservices/microservices/client
-      - run: docker build -t abdalrhman1/multi-nginx -f ./nginx/dockerfile ./microservices/microservices/nginx
-      - run: docker build -t abdalrhman1/multi-server -f ./server/dockerfile ./microservices/microservices/server
-      - run: docker build -t abdalrhman1/multi-worker -f ./worker/dockerfile ./microservices/microservices/worker
+      - run: docker build -t abdalrhman1/multi-client -f  ./microservices/microservices/client
+      - run: docker build -t abdalrhman1/multi-nginx -f   ./microservices/microservices/nginx
+      - run: docker build -t abdalrhman1/multi-server -f  ./microservices/microservices/server
+      - run: docker build -t abdalrhman1/multi-worker -f  ./microservices/microservices/worker
       - run: docker push abdalrhman1/multi-client
       - run: docker push abdalrhman1/multi-nginx
       - run: docker push abdalrhman1/multi-server
